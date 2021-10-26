@@ -36,7 +36,7 @@ version = 1.0
 
 # (list) Application requirements
 # comma separated e.g. requirements = sqlite3,kivy
-requirements = python3,kivy,kivymd,jnius,android,kivmob
+requirements = python3,kivy,kivymd==0.104.2,jnius,android,kivmob
 
 # (str) Custom source folders for requirements
 # Sets custom source for any requirements with recipes
@@ -156,7 +156,7 @@ android.ndk = 19b
 
 # (list) Gradle dependencies to add (currently works only with sdl2_gradle
 # bootstrap)
-android.gradle_dependencies = 'com.google.firebase:firebase-ads:10.2.0'
+android.gradle_dependencies = 'com.google.android.gms:play-services-ads:20.4.0'
 
 # (list) add java compile options
 # this can for example be necessary when importing certain java libraries using the 'android.gradle_dependencies' option
@@ -203,7 +203,7 @@ android.gradle_dependencies = 'com.google.firebase:firebase-ads:10.2.0'
 #android.wakelock = False
 
 # (list) Android application meta-data to set (key=value format)
-android.meta_data = com.google.android.gms.APPLICATION_ID = ca-app-pub-3940256099942544~3347511713
+android.meta_data = com.google.android.gms.ads.APPLICATION_ID = ca-app-pub-3940256099942544~3347511713
 
 # (list) Android library project to add (will be added in the
 # project.properties automatically.)

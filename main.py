@@ -1,5 +1,4 @@
 from kivmob import KivMob,TestIds,RewardedListenerInterface
-
 from kivymd.app import MDApp
 from kivy.uix.screenmanager import ScreenManager, Screen, FadeTransition
 from kivymd.theming import ThemeManager
@@ -95,8 +94,8 @@ class Rewarded(Screen):
 
 class SimpleApp(MDApp):
     def __init__(self, **kwargs):
-        self.theme_cls.theme_style = "Dark"
         super().__init__(**kwargs)
+        self.theme_cls.theme_style="Dark"
         self.rewards = Rewards_Handler(self)
 
     ads = KivMob(TestIds.APP) # put your Admob Id in case you want to put your own ads.
@@ -121,14 +120,14 @@ class Rewards_Handler(RewardedListenerInterface):
 
 
     def on_rewarded(self, reward_name, reward_amount):
-        self.AppObj.points += int(reward_amount)   # in Sample ad unit default amount is 10
-        toast("User recieved 10 points")
+        self.AppObj.points += reward_amount   # in Sample ad unit default amount is 10
+        toast("User recieved " +reward_amount+ " points")
 
     def on_rewarded_video_ad_started(self):    # Reloading Ad
         self.AppObj.load_video()
 
     def on_rewarded_video_ad_completed(self):
-        self.on_rewarded("Points","10")
+        self.on_rewarded("Points",10)
 
     def on_rewarded_video_ad_closed(self):
         self.AppObj.points += 0
